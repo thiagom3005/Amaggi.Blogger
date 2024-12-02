@@ -1,11 +1,12 @@
 using Amaggi.Blogger.Data;
 using Amaggi.Blogger.Entities;
 using Amaggi.Blogger.Notifications;
+using Amaggi.Blogger.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Amaggi.Blogger.Services
 {
-    public class PostService
+    public class PostService : IPostService
     {
         private readonly BlogContext _context;
         private readonly NotificationService _notificationService;

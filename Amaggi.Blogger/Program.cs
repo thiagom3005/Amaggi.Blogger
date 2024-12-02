@@ -1,6 +1,7 @@
 ﻿using Amaggi.Blogger.Data;
 using Amaggi.Blogger.Notifications;
 using Amaggi.Blogger.Services;
+using Amaggi.Blogger.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,8 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<BlogContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddSingleton<NotificationService>();
-builder.Services.AddScoped<UserService>();
-builder.Services.AddScoped<PostService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

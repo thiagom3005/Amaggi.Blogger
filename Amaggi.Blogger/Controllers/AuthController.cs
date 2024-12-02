@@ -1,4 +1,4 @@
-using Amaggi.Blogger.Services;
+using Amaggi.Blogger.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Amaggi.Blogger.Controllers
@@ -7,9 +7,9 @@ namespace Amaggi.Blogger.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
-        private readonly UserService _userService;
+        private readonly IUserService _userService;
 
-        public AuthController(UserService userService)
+        public AuthController(IUserService userService)
         {
             _userService = userService;
         }

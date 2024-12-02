@@ -1,10 +1,11 @@
 using Amaggi.Blogger.Data;
 using Amaggi.Blogger.Entities;
+using Amaggi.Blogger.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Amaggi.Blogger.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
         private readonly BlogContext _context;
 

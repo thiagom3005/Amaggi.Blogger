@@ -1,4 +1,4 @@
-using Amaggi.Blogger.Services;
+using Amaggi.Blogger.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Amaggi.Blogger.Controllers
@@ -7,9 +7,9 @@ namespace Amaggi.Blogger.Controllers
     [Route("api/[controller]")]
     public class PostController : ControllerBase
     {
-        private readonly PostService _postService;
+        private readonly IPostService _postService;
 
-        public PostController(PostService postService)
+        public PostController(IPostService postService)
         {
             _postService = postService;
         }
